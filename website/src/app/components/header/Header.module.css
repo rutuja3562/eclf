@@ -1,0 +1,43 @@
+.header {
+    background-color: var(--header-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .applyButton {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .applyButton:hover {
+    opacity: 0.9;
+  }
+  
