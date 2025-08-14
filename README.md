@@ -75,7 +75,7 @@ Run the NestJS server:
 yarn start:dev
 ```
 
-## Database Meny insert Query:
+## Database Header Menus insert Query:
 
 ```
 INSERT INTO "Menu" (id, name, slug, layout)
