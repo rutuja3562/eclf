@@ -1,9 +1,19 @@
 # 🚀 Fullstack App – Next.js + NestJS + Prisma + PostgreSQL
 
+## 📦 Prerequisites
+
+git clone
+
+`https://github.com/rutuja3562/eclf.git`
+
+```
+cd eclf
+```
+
 This repository contains:
 
-1. **Frontend** – `eclf-skeleton` built with **Next.js 15**, **React 19**, **Zustand**, and **React Query**.
-2. **Backend** – `nest-jwt` built with **NestJS 11**, **JWT Authentication**, and **Prisma ORM**.
+1. **Frontend** – `website` built with **Next.js 15**, **React 19**, **Zustand**, and **React Query**.
+2. **Backend** – `server` built with **NestJS 11**, **JWT Authentication**, and **Prisma ORM**.
 3. **Database** – **PostgreSQL** for persistent storage.
 
 ---
@@ -29,7 +39,7 @@ DATABASE_URL="postgresql://postgres:1234@localhost:5432/eclf"
 
 ## 🛠 Frontend (Next.js) Setup
 
-Navigate to the `eclf-skeleton` directory and install dependencies:
+Navigate to the `eclf` directory and install dependencies:
 
 ```
 yarn install
