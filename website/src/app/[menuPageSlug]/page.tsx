@@ -12,10 +12,10 @@ const layoutMap: Record<string, React.FC<any>> = {
 export default async function DynamicPage({
   params,
 }: {
-  params: Promise<{ slug: string }>; // params is now a Promise
+  params: Promise<{ menuPageSlug: string }>; // params is now a Promise
 }) {
-  const { slug } = await params; // ✅ await it first
-  const pageData = await fetchMenuBySlug(slug);
+  const { menuPageSlug } = await params; // ✅ await it first
+  const pageData = await fetchMenuBySlug(menuPageSlug);
 
   if (!pageData) return notFound();
   console.log("pageData", pageData);

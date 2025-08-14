@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 export default async function DynamicSubPage({
   params,
 }: {
-  params: { slug: string; subMenuPageSlug: string };
+  params: { menuPageSlug: string; subMenuPageSlug: string };
 }) {
   //   const pageData = await fetchSubMenuBySlugs(params.slug, params.subslug);
 
