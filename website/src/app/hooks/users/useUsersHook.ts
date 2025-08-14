@@ -12,7 +12,7 @@ import {
   fetchUsers,
   fetchUserById,
   fetchUserByUserName,
-} from "../../api/user/userApi";
+} from "../../services/user";
 import { CreateUserDto, UpdateUserDto, User } from "../../types/user/user";
 
 // READ

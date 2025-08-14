@@ -1,5 +1,5 @@
 // hooks/useLogger.ts
-import { fetchLogger } from "../../api/logger/loggerApi";
+import { fetchLogger } from "../../services/logger";
 import { LogEntry, LogLevel } from "../../types/commonTypes";
 import { useCallback } from "react";
 

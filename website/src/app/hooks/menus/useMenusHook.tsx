@@ -1,6 +1,6 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { Menu } from "../../types/menusTypes";
-import { fetchMenu, fetchMenuBySlug } from "../../api/menus/menusApi";
+import { fetchMenu, fetchMenuBySlug } from "../../services/menus";
 
 // READ
 export const useMenus = (): UseQueryResult<Menu[], Error> => {
