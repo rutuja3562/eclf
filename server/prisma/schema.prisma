@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      ="postgresql://postgres:1234@localhost:5432/nestjs"
+  url      ="postgresql://postgres:1234@localhost:5432/eclf"
 }
 
 model User{

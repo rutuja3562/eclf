@@ -13,7 +13,7 @@ export class PrismaService
         db: {
           url:
             process.env.DATABASE_URL ||
-            "postgresql://postgres:1234@localhost:5432/nestjs",
+            "postgresql://postgres:1234@localhost:5432/eclf",
         },
       },
     });

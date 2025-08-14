@@ -21,22 +21,11 @@ Before starting, make sure you have:
 
 ## ⚙️ Environment Setup
 
-### 1️⃣ Create `.env` file in the **`nest-jwt`** folder
+### 1️⃣ Create `.env` file in the **`server`** folder
 
 ```env
-DATABASE_URL="postgresql://postgres:1234@localhost:5432/nestjs"
-JWT_SECRET="super-secret-key"
+DATABASE_URL="postgresql://postgres:1234@localhost:5432/eclf"
 ```
-
-## 🛠 Backend (NestJS) Setup
-
-Navigate to the `server` directory and install dependencies:
-
-yarn install
-
-Run the NestJS server:
-
-yarn start:dev
 
 ## 🛠 Frontend (Next.js) Setup
 
@@ -54,12 +43,44 @@ yarn dev
 
 yarn dev
 
-## 🛠 Database (Prisma) Setup
+## 🛠 Backend (NestJS) Setup
 
-Navigate to the `server` directory and run the following commands:
+Navigate to the `server` directory and install dependencies:
 
 ```
+yarn install
+```
+
+## Generate Prisma Client and Database (Prisma) Setup
+
+```
+npx prisma generate
 npx prisma migrate dev --create-only
 npx prisma db push
+```
+
+Run the NestJS server:
+
+```
+yarn start:dev
+```
+
+## Database Meny insert Query:
+
+```
+INSERT INTO "Menu" (id, name, slug, layout)
+VALUES
+  (
+    gen_random_uuid(),
+    'About Us',
+    'about',
+    'aboutLayout'
+  ),
+  (
+    gen_random_uuid(),
+    'Our Services',
+    'services',
+    'serviceLayout'
+  );
 
 ```
