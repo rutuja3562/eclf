@@ -1,6 +1,6 @@
 //src/app/page.tsx
 "use client";
-import { useUserByUserName } from "./hooks/users/useUsersHook";
+import { useUserByUserName } from "../hooks/users/useUsersHook";
 
 export default function Home() {
   const { data, isError, isLoading } = useUserByUserName("johndoe");

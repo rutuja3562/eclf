@@ -1,8 +1,8 @@
 // //src/app/[slug]/page.tsx
 import { notFound } from "next/navigation";
-import AboutLayout from "../components/layouts/about-layout/AboutLayout";
-import ServiceLayout from "../components/layouts/service-layout/ServiceLayout";
-import { fetchMenuBySlug } from "../services/menus";
+import AboutLayout from "../../components/layouts/about-layout/AboutLayout";
+import ServiceLayout from "../../components/layouts/service-layout/ServiceLayout";
+import { fetchMenuBySlug } from "../../services/menus";
 
 const layoutMap: Record<string, React.FC<any>> = {
   aboutLayout: AboutLayout,
