@@ -15,17 +15,15 @@ export default async function DynamicPage({
   params: Promise<{ menuPageSlug: string }>; // params is now a Promise
 }) {
   const { menuPageSlug } = await params; // ✅ await it first
-  const pageData = await fetchMenuBySlug(menuPageSlug);
-
-  if (!pageData) return notFound();
-  console.log("pageData", pageData);
-  const LayoutComponent = layoutMap[pageData.layout];
-  console.log("LayoutComponent", LayoutComponent);
+  const menuData = await fetchMenuBySlug(menuPageSlug);
+  if (!menuData) return notFound();
+  const LayoutComponent = layoutMap[menuData.layoutType];
+  const pageData = "";
   if (!LayoutComponent) return notFound();
 
   return (
     <div className="bg-gradient-custom flex flex-col min-h-screen">
-      <LayoutComponent data={pageData} />
+      <LayoutComponent data={menuData} />
     </div>
   );
 }

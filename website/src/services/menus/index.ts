@@ -5,7 +5,7 @@ import { Menu } from "../../types/menusTypes";
 import { API_BASE_URL } from "../../config/config";
 
 export const fetchMenu = async (): Promise<Menu[]> => {
-  const res = await axios.get(`${API_BASE_URL}/menus`);
+  const res = await axios.get(`${API_BASE_URL}/menu`);
   console.log("res", res.data);
   return res.data;
 };
@@ -16,6 +16,7 @@ export const fetchMenu = async (): Promise<Menu[]> => {
 //   return res.data;
 // };
 export const fetchMenuBySlug = async (slug: string): Promise<Menu> => {
-  const res = await axios.get(`${API_BASE_URL}/menus/${slug}`);
+  console.log("API_BASE_URL", `${API_BASE_URL}/menu/${slug}`);
+  const res = await axios.get(`${API_BASE_URL}/menu/${slug}`);
   return res.data;
 };

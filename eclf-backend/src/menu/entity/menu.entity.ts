@@ -14,16 +14,22 @@ export class Menu {
   id: number;
 
   @Column()
-  title: string;
+  name: string;
 
   @Column({ nullable: true })
-  url: string;
+  path: string;
+
+  @Column({ nullable: true })
+  fullPath: string;
 
   @Column({ nullable: true })
   icon: string;
 
   @Column({ default: 0 })
-  order: number; // For sorting menu items
+  localOrder: number; // For sorting menu items
+
+  @Column({ default: 0 })
+  layoutType: string; // For sorting menu items
 
   @CreateDateColumn({
     type: 'timestamptz',

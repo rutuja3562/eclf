@@ -1,7 +1,9 @@
 export class CreateMenuDto {
-  title: string;
-  url?: string;
-  icon?: string;
-  order?: number;
-  parentId?: number;
+  name: string;
+  path?: string;
+  fullPath?: string;
+  icon: string;
+  localOrder: number;
+  parentId: number | null;
+  layoutType?: string;
 }

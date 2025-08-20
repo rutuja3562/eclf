@@ -23,14 +23,19 @@ export class MenuService {
         },
       },
       order: {
-        order: 'ASC',
+        localOrder: 'ASC',
         children: {
-          order: 'ASC', // Sort submenus too
+          localOrder: 'ASC', // Sort submenus too
         },
       },
     });
   }
 
+  async getMenuBySlug(path: string) {
+    return this.menuRepository.findOne({
+      where: { path },
+    });
+  }
   async create(createMenuDto: CreateMenuDto) {
     const menu = this.menuRepository.create(createMenuDto);
 
