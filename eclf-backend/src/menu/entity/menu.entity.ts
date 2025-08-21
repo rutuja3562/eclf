@@ -25,6 +25,9 @@ export class Menu {
   @Column({ default: 0 })
   order: number; // For sorting menu items
 
+  @Column({ nullable: true })
+  parentId: number;
+
   @CreateDateColumn({
     type: 'timestamptz',
     default: () => 'CURRENT_TIMESTAMP',

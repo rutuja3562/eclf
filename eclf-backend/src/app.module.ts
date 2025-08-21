@@ -5,20 +5,30 @@ import { MenuModule } from './menu/menu.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { Menu } from './menu/entity/menu.entity';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
-    MenuModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'Rajan@2004',
-      database: 'eclfDB',
-      entities: [Menu],
-      synchronize: true, // dev only, do not use in production
+    ConfigModule.forRoot({
+      isGlobal: true, //ensures .env is loaded everywhere
     }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => {
+        return {
+          type: 'postgres',
+          host: config.get<string>('DB_HOST'),
+          port: config.get<number>('DB_PORT'),
+          username: config.get<string>('DB_USER'),
+          password: config.get<string>('DB_PASS'),
+          database: config.get<string>('DB_NAME'),
+          autoLoadEntities: true,
+          synchronize: true,
+        };
+      },
+    }),
+    MenuModule,
   ],
   controllers: [AppController],
   providers: [AppService],

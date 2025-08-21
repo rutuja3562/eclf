@@ -6,7 +6,7 @@ import {
 import { Menu } from './entity/menu.entity';
 import { Repository, IsNull } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateMenuDto } from './dto';
+import { CreateMenuDto } from './dto/create-menu-dto';
 
 @Injectable()
 export class MenuService {
@@ -44,7 +44,6 @@ export class MenuService {
           `Parent menu with ID ${createMenuDto.parentId} not found`,
         );
       }
-
       // Prevent circular references
       if (createMenuDto.parentId === menu.id) {
         throw new BadRequestException('Menu cannot be its own parent');
@@ -52,5 +51,16 @@ export class MenuService {
     }
 
     return this.menuRepository.save(menu);
+  }
+
+  async update(id: number, updateMenuData: CreateMenuDto) {
+    if (!id) {
+      throw new Error('Menu ID is required for update');
+    }
+    return await this.menuRepository.update(id, updateMenuData);
+  }
+
+  async deletItemMenu(id: number) {
+    return await this.menuRepository.delete(id);
   }
 }
