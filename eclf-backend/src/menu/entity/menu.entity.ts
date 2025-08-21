@@ -1,3 +1,4 @@
+import { MenuDetails } from 'src/menu-details/menu-details.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -48,4 +49,7 @@ export class Menu {
   // This connects a parent to its children
   @OneToMany(() => Menu, (menu) => menu.parent)
   children: Menu[];
+
+  @OneToMany(() => MenuDetails, (detail) => detail.menu, { cascade: true })
+  details: MenuDetails[];
 }
